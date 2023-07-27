@@ -13,8 +13,9 @@ jobs:
          run: |
            brew update
            brew upgrade
-           brew install ta-lib 
+           brew install ta-lib
+           pip install talib 
 
        - name: Check ta-lib install
          run: |
-          python -c "import ta-lib as ta; print(dir(ta))"
+          python -c "import talib as ta; print(dir(ta))"
