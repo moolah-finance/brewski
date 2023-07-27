@@ -18,4 +18,4 @@ jobs:
 
        - name: Check ta-lib install
          run: |
-          python3 -c "import talib as ta; print(dir(ta))"
+          python3 -c "import ta-lib as ta; print(dir(ta))"
