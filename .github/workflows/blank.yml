@@ -5,20 +5,16 @@ on:
 
 jobs:
   test1:
-     name: Install Brew
+     name: Install Brew && ta-lib
      runs-on: macos-latest
      steps:
        - uses: actions/checkout@master
-
-       - name: Install numpy
+       - name: Install ta-lib
          run: |
            brew update
            brew upgrade
-           brew install numpy
+           brew install ta-lib 
 
-       - name: Check Brew install
+       - name: Check ta-lib install
          run: |
-          brew update
-          brew upgrade
-          brew cleanup
-          python -c "import numpy as np; print(np.version.git_revision)"
+          python -c "import ta-lib as ta; print(dir(ta))"
