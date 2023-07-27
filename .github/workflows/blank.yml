@@ -11,10 +11,10 @@ jobs:
        - uses: actions/checkout@master
        - name: Install ta-lib
          run: |
-           brew update
-           brew upgrade
            brew install ta-lib
+           brew link --overwrite go
            pip install talib 
+           
 
        - name: Check ta-lib install
          run: |
