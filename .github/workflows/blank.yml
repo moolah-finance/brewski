@@ -1,4 +1,4 @@
-# name: Install awscli and awsebcli on Mac
+name: Build
 
 on: 
   push
