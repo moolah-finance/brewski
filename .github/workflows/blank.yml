@@ -5,7 +5,7 @@ on:
 
 jobs:
   test1:
-     name: Install commands
+     name: Install Brew
      runs-on: macos-latest
      steps:
        - uses: actions/checkout@master
@@ -16,7 +16,10 @@ jobs:
            brew install awscli awsebcli
            brew upgrade
 
-       - name: Check
+       - name: Check Brew install
          run: |
-           aws --version
-           eb --version
+          brew update
+          brew upgrade
+          brew cleanup
+          aws --version
+          eb --version
