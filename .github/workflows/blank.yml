@@ -10,16 +10,15 @@ jobs:
      steps:
        - uses: actions/checkout@master
 
-       - name: Install awscli and awsebcli
+       - name: Install numpy
          run: |
            brew update
-           brew install awscli awsebcli
            brew upgrade
+           brew install numpy
 
        - name: Check Brew install
          run: |
           brew update
           brew upgrade
           brew cleanup
-          aws --version
-          eb --version
+          python -c "import numpy as np; print(np.version.git_revision)"
