@@ -5,7 +5,7 @@ on:
 
 jobs:
   test1:
-     name: Install Brew && ta-lib
+     name: Install ta-lib
      runs-on: macos-latest
      steps:
        - uses: actions/checkout@master
@@ -13,9 +13,9 @@ jobs:
          run: |
            brew install ta-lib
            brew link --overwrite go
-           pip install talib 
+           pip3 install talib 
            
 
        - name: Check ta-lib install
          run: |
-          python -c "import talib as ta; print(dir(ta))"
+          python3 -c "import talib as ta; print(dir(ta))"
