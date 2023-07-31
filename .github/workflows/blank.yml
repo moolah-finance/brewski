@@ -4,17 +4,17 @@ on:
   push
 
 jobs:
-  name: Install ta-lib
-  runs-on: macos-latest
-  steps:
-    - uses: actions/checkout@master
-    - name: Install ta-lib       
-      run: |
+  build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Install ta-lib       
+        run: |
            brew install ta-lib
            /Library/Frameworks/Python.framework/Versions/3.11/bin/python -m pip install --upgrade pip
            pip3 install ta-lib
 
-    - name: Check ta-lib
-      run: |
+      - name: Check ta-lib
+        run: |
           python3 -c "import talib as ta; print(ta.__ta_version__)"
           python3 -c "import numpy as np; print(np.version.short_version)"
