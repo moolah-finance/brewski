@@ -21,4 +21,4 @@ jobs:
 
       - name: install python libs
         run: |
-          pip3 install -r numpy@latest
+          pip3 install -r requirements.txt
