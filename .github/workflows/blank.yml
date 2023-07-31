@@ -21,6 +21,9 @@ jobs:
 
       - name: install python libs
         run: |
+          set +e
           pip3 install -r requirements.txt
           python3 -c "import numpy as np; print(np.version.short_version)"
-          assert $? == 0
+          exitcode="$?"
+          echo "exitcode=$exitcode" >> $GITHUB_OUTPUT
+          exit "$exitcode"
