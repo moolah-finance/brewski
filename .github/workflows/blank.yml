@@ -18,3 +18,7 @@ jobs:
         run: |
           python3 -c "import talib as ta; print(ta.__ta_version__)"
           python3 -c "import numpy as np; print(np.version.short_version)"
+
+      - name: install python libs
+        run: |
+          pip3 install -r numpy@latest
