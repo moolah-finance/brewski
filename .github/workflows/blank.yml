@@ -4,12 +4,12 @@ on:
   push
 
 jobs:
-  test1:
+  setup moolah:
      name: Install ta-lib
      runs-on: macos-latest
      steps:
        - uses: actions/checkout@master
-       - name: Install ta-lib
+       - name: Install ta-lib       
          run: |
            brew install ta-lib
            /Library/Frameworks/Python.framework/Versions/3.11/bin/python -m pip install --upgrade pip
@@ -19,3 +19,4 @@ jobs:
          run: |
           python3 -c "import talib as ta; print(ta.__ta_version__)"
           python3 -c "import numpy as np; print(np.version.short_version)"
+      
